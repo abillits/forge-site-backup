@@ -19,7 +19,7 @@ $version = 0.1;
 ###########################################
 if ( !defined('BASE_DIR') ) {
  define('BASE_DIR', dirname(__FILE__) . '/');
- define('WORK_DIR', '/home/forge/site-backup-work');
+ define('WORK_DIR', '/home/forge/site-backup-work/');
 }
 $now = time();
 define('S3_BACKUP_DIR',date("YmdHis",$now));
