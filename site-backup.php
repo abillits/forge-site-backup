@@ -2,7 +2,7 @@
 set_time_limit(0);
 /*
 Run the following via cron (or whatever) as often as you want
-php8.1 /home/forge/site-backup/site-backup.php
+php8.1 /home/forge/site-backup/public/site-backup.php
 
 Configure via .env:
 s3_endpoint="your-s3-endpoint"
@@ -19,7 +19,7 @@ $version = 0.1;
 ###########################################
 if ( !defined('BASE_DIR') ) {
  define('BASE_DIR', dirname(__FILE__) . '/');
- define('WORK_DIR', BASE_DIR . 'work/');
+ define('WORK_DIR', str_replace('public','work',BASE_DIR));
 }
 $now = time();
 define('S3_BACKUP_DIR',date("YmdHis",$now));

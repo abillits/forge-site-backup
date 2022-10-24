@@ -1,6 +1,6 @@
 # forge-site-backup
 Run the following via cron (or whatever) as often as you want
-php8.1 /home/forge/site-backup/site-backup.php
+php8.1 /home/forge/site-backup/public/site-backup.php
 
 Configure via .env:
 s3_endpoint="your-s3-endpoint"
