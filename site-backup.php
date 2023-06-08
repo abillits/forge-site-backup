@@ -37,7 +37,7 @@ if (file_exists(BASE_DIR . '.env')) {
 function get_s3_client(){
   $client = new Aws\S3\S3Client([
           'version' => 'latest',
-          'region'  => 'us-east-1',
+          'region'  => 'us-east-va',
           'endpoint' => S3_ENDPOINT,
           'credentials' => [
                   'key'    => S3_ACCESS_KEY,
