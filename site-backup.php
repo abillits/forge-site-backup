@@ -200,7 +200,7 @@ function backup_site($site){
     exec('tar -czf ' . $backup_file_path . ' ' . $site_path . ' 2>&1', $output, $return_var);
     if (file_exists($backup_file_path)) {
       //upload to s3
-      put_s3_objects(array($backup_file_path),'private',STORAGE_DIRECTORY . '/' . S3_BACKUP_DIR . '/');
+      put_s3_objects(array($backup_file_path),'private',STORAGE_DIRECTORY . '/' . S3_BACKUP_DIR);
       //delete compressed backup
       @unlink($backup_file_path);
       return 'success';
