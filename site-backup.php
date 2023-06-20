@@ -176,6 +176,7 @@ function cleanup_old_backups(){
   foreach ($s3_objects as $s3_object) {
     $s3_object = str_replace(STORAGE_DIRECTORY,'',$s3_object);
     $s3_object_pieces = explode('/',$s3_object);
+    echo STORAGE_DIRECTORY;
     print_r($s3_object_pieces);
     $date = DateTimeImmutable::createFromFormat('YmdHis', $s3_object_pieces[0]);
     $backups[$date->getTimestamp()] = STORAGE_DIRECTORY . '/' . $s3_object_pieces[0];
