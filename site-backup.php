@@ -177,7 +177,7 @@ function cleanup_old_backups(){
     $s3_object = str_replace(STORAGE_DIRECTORY,'',$s3_object);
     $s3_object_pieces = explode('/',$s3_object);
     $date = DateTimeImmutable::createFromFormat('YmdHis', $s3_object_pieces[0]);
-    $backups[$date->getTimestamp()] = STORAGE_DIRECTORY . '/' . $s3_object_pieces[0];
+    $backups[$date->getTimestamp()] = STORAGE_DIRECTORY . $s3_object_pieces[0];
     unset($date);
   }
   krsort($backups); //oldest at top
